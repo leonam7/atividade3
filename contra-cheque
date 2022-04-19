@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autumn Ring Mini - Salário</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+ integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+ 
+<style>
+body{
+  background-color: #FFFACD;
+}
+h1 {font-family: "Montserrat", sans-serif}
+img {margin-bottom: -7px}
+.w3-row-padding img {margin-bottom: 12px}
+</style>
+
+<body>
+   
+        <script type="text/javascript">
+          function contracheque(){
+            var nome    =  form_gerarcontracheque.nome.value;
+            var cargo   =  form_gerarcontracheque.cargo.value;
+            var salario =  form_gerarcontracheque.salario.value;
+    
+            var novo_salr = "O CARGO NÃO POSSUI REAJUSTE DE SALÁRIO";
+    
+            if (cargo == "Atendente") {
+              var aumento  = (parseFloat(salario) * 0.08);
+              var novo_salr  = (parseFloat(salario) + parseFloat(aumento));
+              var perc_aum = " (+ 8%)";
+            }
+            else if (cargo == "Estoquista") {
+              var aumento = (parseFloat(salario) * 0.06);
+              var novo_salr  = (parseFloat(salario) + parseFloat(aumento));
+              var perc_aum = " (+ 6%)";
+            } 
+            else if (cargo == "Gerente") {
+              var aumento = (parseFloat(salario) * 0.03);
+              var novo_salr  = (parseFloat(salario) + parseFloat(aumento));
+              var perc_aum = " (+ 3%)";
+            }
+            else {
+              var aumento = "CARGO SEM AUMENTO NO MOMENTO.";
+            }
+    
+            if (novo_salr <= 1045) {
+              var inss  = (parseFloat(novo_salr) * 0.075);
+              var sal_liq = parseFloat(novo_salr) - parseFloat(inss);
+              var perc_inss = " (- 7,5%)";
+            }
+            else if ((novo_salr > 1045) && (novo_salr <= 2089.6)) {
+              var inss  = (parseFloat(novo_salr) * 0.09);
+              var sal_liq = parseFloat(novo_salr) - parseFloat(inss);
+              var perc_inss = " (- 9%)";
+            }
+            else if ((novo_salr > 2089.6) && (novo_salr <= 3134.4)) {
+              var inss  = (parseFloat(novo_salr) * 0.12);
+              var sal_liq = parseFloat(novo_salr) - parseFloat(inss);
+              var perc_inss = " (- 12%)";
+            }
+            else {
+              var inss  = (parseFloat(novo_salr) * 0.14);
+              var sal_liq = parseFloat(novo_salr) - parseFloat(inss);
+              var perc_inss = " (- 14%)";
+            }
+    
+            document.getElementById("demo").innerHTML = 
+            document.getElementById("demo").innerHTML = 
+
+            "-----------------------------------------------<b>CONTRA CHEQUE</b> ----------------------------------------------"+
+            "<br><b>FUNCIONÁRIO:</b> "+nome.toUpperCase()+
+            "<br><b>CARGO:</b> "+cargo.toUpperCase()+
+            "<br><b>SALÁRIO ATUAL:</b> "+parseFloat(salario).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+
+            "<br><b>AUMENTO SALARIAL:</b> " +aumento.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+perc_aum+
+            "<br><b>NOVO SALÁRIO:</b> "+novo_salr.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+
+            "<br><b>DESC. INSS:</b> "+inss.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+perc_inss+
+            "<br><b>SALÁRIO LIQ.:</b> "+sal_liq.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+
+            "<br>------------------------------------------------------------------------------------------------------------------"
+    
+          }
+        </script>
+    
+      </head>
+    
+      <body>
+        <nav class="navbar navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+              <img src="img/a-icon.jpeg" alt="" width="30" height="24" class="d-inline-block align-text-top">
+              Autumn Ring Mini
+            </a>
+            </nav>      
+                 
+        <main role="main" class="container">
+    
+          <div class="starter-template" style="text-align:center">
+            <h1> Autumn Ring Mini - Consulta de Salário </h1><br><br>
+            
+          </div>
+          
+          <div class="row">
+            <div class="col-6">
+              <h5 style="text-align: center;">Plano, cargos e carreira</h5>
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">Cargo</th>
+                    <th scope="col">Aumento (%)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Atendente</td>
+                    <td>8</td>
+                  </tr>
+                  <tr>
+                    <td>Estoquista</td>
+                    <td>6</td>
+                  </tr>
+                  <tr>
+                    <td>Gerente</td>
+                    <td>3</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div class="col-6">
+              <h5 style="text-align: center;">Contribuição do INSS 2020</h5>
+              <table class="table table-sm">  
+                <thead>
+                  <tr>
+                    <th scope="col">Salário Base</th>
+                    <th scope="col">Aliquota INSS (%)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>até R$ 1.045,00</td>
+                    <td>7,5</td>
+                  </tr>
+                  <tr>
+                    <td>de R$ 1.045,01 até R$ 2.089,60</td>
+                    <td>9</td>
+                  </tr>
+                  <tr>
+                    <td>de R$ 2.089,61 até R$ 3.134,40</td>
+                    <td>12</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <hr>
+    
+          <div>
+            <form name="form_gerarcontracheque" id="form_gerarcontracheque">
+              <div class="form-row">
+                <div class="col">
+                  <label>Funcionário</label>
+                  <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo do funcionário" required>
+                </div>
+              </div>
+    
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label>Cargo</label>
+                  <select class="custom-select" id="cargo" name="cargo" required>
+                    <option selected disabled value="">Selecione um cargo...</option>
+                    <option value="Atendente">Atendente</option>
+                    <option value="Estoquista">Estoquista</option>
+                    <option value="Gerente">Gerente</option>
+                  </select>
+                </div>
+    
+                <div class="col-md-6 mb-3">
+                  <label>Salário</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroupPrepend2">R$</span>
+                    </div>
+                    <input type="text" class="form-control" id="salario" name="salario" required>
+                  </div>
+                </div>
+              </div>
+    
+              <button onclick="contracheque()" class="btn btn-outline-primary float-right" type="button">Calcular</button>
+            </form>
+          </div>
+          <br><br>
+          <p id="demo"></p>
+    
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        </body>
+</body>
+</html>
